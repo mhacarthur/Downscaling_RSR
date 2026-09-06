@@ -1,4 +1,8 @@
-## Working ...
+# Spatial Downscaling of Remote Sensing and Reanalysis (RSR) 
+
+## Methodology
+
+This methodology is based on the stochastic downscaling method proposed by Zorzetto and Marani (2019 [[1]](#ref1)), which transforms area-averaged precipitation statistics from RSR grid cells into an estimated point-scale precipitation distribution, with particular attention to extremes, and builds on the metastatistical approach to rainfall extremes proposed by Marani and Ignaccolo (2015 [[2]](#ref2))
 
 
 ## Acknowledgements and Code Attribution
@@ -12,3 +16,11 @@ All other code, data processing procedures, analyses, and scripts contained in t
 The original `downpy` repository is distributed under the MIT License, and the original work of Enrico Zorzetto is acknowledged here accordingly.
 
 Original repository: https://github.com/EnricoZorzetto/downpy
+
+## References
+
+<a id="ref1"></a>[1] Marani M, Ignaccolo M (2015). *A Metastatistical Approach to Rainfall Extremes*. Advances in Water Resources, 79: 121–126. https://doi.org/10.1016/j.advwatres.2015.03.001
+
+<a id="ref2"></a>[2] Zorzetto, E. and Marani, M.: *Downscaling of rainfall extremes from satellite observations*, Water Resources Research, 55, 156–174, 2019. https://doi.org/10.1029/2018WR022950
+
+
