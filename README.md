@@ -4,6 +4,7 @@
 
 This methodology is based on the stochastic downscaling method proposed by Zorzetto and Marani (2019 [[1]](#ref1)), which transforms area-averaged precipitation statistics from RSR grid cells into an estimated point-scale precipitation distribution, with particular attention to extremes, and builds on the metastatistical approach to rainfall extremes proposed by Marani and Ignaccolo (2015 [[2]](#ref2))
 
+## RSR Data
 
 ## Acknowledgements and Code Attribution
 
