@@ -1,4 +1,5 @@
 import os
+import time
 import psutil
 import argparse
 import numpy as np
@@ -16,6 +17,7 @@ sys.path.append(os.path.abspath(".."))
 from function import DOWN_raw
 
 os.system("cls" if os.name == "nt" else "clear")
+start_time = time.time()
 
 # =============================================================================
 # Example
@@ -60,10 +62,10 @@ parnames = ['eps', 'alp'] if acf == 'mar' else ['d0', 'mu0']
 # =============================================================================
 
 # PADOVA
-# lon_min, lon_max, lat_min, lat_max, area = 11, 12.5, 45, 46, 'PADOVA'
+lon_min, lon_max, lat_min, lat_max, area = 11, 12.5, 45, 46, 'PADOVA'
 
 # VENETO
-lon_min, lon_max, lat_min, lat_max, area = 10.5, 13.5, 44.5, 47, 'VENETO'
+# lon_min, lon_max, lat_min, lat_max, area = 10.5, 13.5, 44.5, 47, 'VENETO'
 
 # ITALY
 # lon_min, lon_max, lat_min, lat_max, area = 6.5, 19, 36.5, 48, 'ITALY'
@@ -290,8 +292,6 @@ for la, lo, gamma_ in results:
 # EXPORT GAMMA TO NETCDF
 # =============================================================================
 
-print()
-
 GAMMA_xr = xr.Dataset(
                 data_vars={"GAMMA": (("lat", "lon"),GAMMA),},
                 coords={'lat': lats,'lon': lons},
@@ -315,8 +315,20 @@ GAMMA_xr.GAMMA.attrs["target_scale_km"] = target_x_t[0]
 
 DOWN_out = os.path.join(dir_out,f'{area}_Gamma_{product}_{time_reso}_{yy_s}_{yy_e}_npix_{npix}.nc')
 
-print(f'Export Data to {DOWN_out}')
+print(f'Export as: {DOWN_out}')
 
 GAMMA_xr.to_netcdf(DOWN_out)
 
+print()
+
+# =============================================================================
+# EXECUTION TIME
+# =============================================================================
+
+elapsed_time = time.time() - start_time
+
+hours, remainder = divmod(elapsed_time, 3600)
+minutes, seconds = divmod(remainder, 60)
+
+print(f"Execution time: {int(hours):02d}:{int(minutes):02d}:{seconds:05.2f}")
 print()

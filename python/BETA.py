@@ -1,4 +1,5 @@
 import os
+import time
 import psutil
 import argparse
 import numpy as np
@@ -17,6 +18,7 @@ from function import DOWN_raw
 from function import ART_downscale
 
 os.system("cls" if os.name == "nt" else "clear")
+start_time = time.time()
 
 # =============================================================================
 # Example
@@ -211,4 +213,16 @@ BETA_xr.BETA.attrs["origname"] = "Beta"
 DOWN_out = os.path.join('..','output','Beta',f'{area}_Beta_{product}_{time_reso}_{yy_s}_{yy_e}_npix_{npix}.nc')
 print(f'Export Data to {DOWN_out}')
 BETA_xr.to_netcdf(DOWN_out)
+print()
+
+# =============================================================================
+# EXECUTION TIME
+# =============================================================================
+
+elapsed_time = time.time() - start_time
+
+hours, remainder = divmod(elapsed_time, 3600)
+minutes, seconds = divmod(remainder, 60)
+
+print(f"Execution time: {int(hours):02d}:{int(minutes):02d}:{seconds:05.2f}")
 print()
