@@ -2,9 +2,11 @@
 
 ## Methodology
 
-This methodology is based on the stochastic downscaling method proposed by Zorzetto and Marani (2019 [[1]](#ref1)), which transforms area-averaged precipitation statistics from RSR grid cells into an estimated point-scale precipitation distribution, with particular attention to extremes, and builds on the metastatistical approach to rainfall extremes proposed by Marani and Ignaccolo (2015 [[2]](#ref2))
+This methodology is based on the stochastic downscaling method proposed by [Zorzetto and Marani (2019)](#ref1), which transforms area-averaged precipitation statistics from RSR grid cells into an estimated point-scale precipitation distribution, with particular attention to extremes, and builds on the metastatistical approach to rainfall extremes proposed by [Marani and Ignaccolo (2015)](#ref2).
 
 ## Study Area
+
+*This section is currently being updated.*
 
 ## Spatial Downscaling Approach
 
@@ -12,17 +14,19 @@ This approach links precipitation statistics at the satellite-grid scale to thos
 
 The functions β and γ are estimated from high-temporal-resolution rainfall data and the spatial correlation structure of each satellite dataset. They are then used to translate the parameters of the Weibull distribution of rainfall intensity from the satellite-grid scale to the point scale. Within the MEVD framework, the resulting point-scale Weibull parameters are used to estimate extreme precipitation statistics from satellite observations.
 
-Figure 1 illustrates the procedure used to estimate β and γ for the Veneto region. The animation shows the neighborhood considered for a central pixel, the wet-fraction scaling used to estimate β, and the spatial correlation structure used to estimate γ.
+[Figure 1](#fig1) illustrates the procedure used to estimate β and γ for the Veneto region. The animation shows the neighborhood considered for a central pixel, the wet-fraction scaling used to estimate β, and the spatial correlation structure used to estimate γ.
 
 <a id="fig1"></a>
 ![Example of the spatial downscaling procedure for the Veneto region](figures/gif/Veneto_box_beta_gamma_v3.gif)
 <p align="center"><em>Figure 1. Illustration of the spatial downscaling procedure.</em></p>
 
+The downscaling procedure is applied to one central pixel at a time (red dot in [Figure 1](#fig1)) and repeated across all pixels within the study region (green dashed outline). For pixels near the study-region boundary, the neighborhood used in the calculations extends beyond the study region (yellow box). We therefore define an extended region (blue outline) to include the additional surrounding pixels required for the downscaling procedure.
+
 The procedure is applied independently to each pixel in the study area to produce spatial fields of β and γ. It is repeated for each rainfall dataset.
 
 ## RSR Data
 
-format: netcdf
+*This section is currently being updated.*
 
 ## Acknowledgements and Code Attribution
 
